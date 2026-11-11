@@ -1,0 +1,36 @@
+:root{--indigo:#23206b;--deep:#171552;--gold:#ffb400;--chalk:#f6f3ff;--chili:#ff6b6b;--leaf:#5ee0a0;--lilac:#b9b3f0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--indigo);color:var(--chalk);font:17px/1.5 "Instrument Sans",system-ui,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:32px 16px 72px}
+.mark{font:800 clamp(3.2rem,14vw,6.5rem)/.9 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.04em;margin:0;color:var(--gold)}
+.tag-line{max-width:46ch;margin:12px 0 32px;color:var(--lilac)}
+.ask p{font:500 clamp(1.5rem,5vw,2.3rem)/1.9 "Bricolage Grotesque",system-ui,sans-serif;margin:0 0 16px}
+.ask input{font:inherit;color:var(--gold);background:transparent;border:0;border-bottom:3px dashed var(--gold);padding:0 4px;max-width:100%;border-radius:0}
+.ask input::placeholder{color:rgba(255,180,0,.45)}.ask .amt{width:5ch}
+button{font:600 1rem "Instrument Sans",system-ui,sans-serif;padding:12px 20px;border:0;border-radius:999px;background:var(--gold);color:var(--deep);cursor:pointer}
+button.small{padding:6px 14px;font-size:.9rem;background:var(--deep);color:var(--chalk)}
+button.ghost{background:transparent;color:var(--lilac);text-decoration:underline}button:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--chalk);outline-offset:3px}
+.error{color:var(--chili);font-weight:600}.muted{color:var(--lilac);font-size:.9rem}.center{text-align:center}
+.log{list-style:none;padding:0;margin:28px 0 16px}.log li{padding:6px 0 6px 28px;position:relative;animation:in .25s ease-out}
+.log li::before{content:"✓";position:absolute;left:0;color:var(--leaf);font-weight:700}
+.verdict{margin:8px 0 24px;padding:16px 20px;background:var(--deep);border-radius:12px}.verdict p{margin:0}
+.shelf{list-style:none;padding:0;margin:0}
+.tag{position:relative;display:grid;grid-template-columns:1fr auto;gap:8px 16px;margin-bottom:12px;padding:16px 20px 14px 44px;background:var(--chalk);color:var(--deep);clip-path:polygon(22px 0,100% 0,100% 100%,22px 100%,0 50%)}
+.tag::before{content:"";position:absolute;left:14px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--indigo)}
+.tag.pick{background:var(--gold)}.tag div:first-child{display:grid;gap:2px}.sub{font-size:.85rem;opacity:.75}
+.price{display:grid;justify-items:end;gap:6px}.price strong{font:800 1.8rem/1 "Bricolage Grotesque",system-ui,sans-serif}
+.badge{justify-self:start;background:var(--deep);color:var(--gold);padding:1px 10px;border-radius:999px;font-size:.8rem;font-weight:600}
+.win{color:#0b6b43;font-weight:600;font-size:.9rem}.tag.pick .win{color:var(--deep)}.flags{color:#a62b2b;font-size:.82rem}
+.meter{grid-column:1/-1;height:6px;background:rgba(23,21,82,.18);border-radius:3px;overflow:hidden}.meter i{display:block;height:100%;background:var(--deep)}.meter i.over{background:#c0392b}
+.scrim{position:fixed;inset:0;background:rgba(10,8,50,.7);display:grid;place-items:end center}
+.sheet{width:100%;max-width:520px;padding:24px;background:var(--chalk);color:var(--deep);border-radius:20px 20px 0 0;animation:up .2s ease-out}
+.sheet h2{font:800 1.5rem/1.2 "Bricolage Grotesque",system-ui,sans-serif;margin:0}.sheet .muted{color:#4b4890}
+.big{font:800 2.6rem/1 "Bricolage Grotesque",system-ui,sans-serif;margin:12px 0}
+.hold{position:relative;width:100%;overflow:hidden;padding:16px;background:var(--deep);color:var(--chalk);touch-action:none;user-select:none}
+.hold::before{content:"";position:absolute;inset:0;width:0;background:var(--gold)}.hold span{position:relative;mix-blend-mode:normal}
+.hold.holding::before{animation:fill 1s linear forwards}.hold.holding{color:var(--deep)}
+.ticket{margin:40px auto;max-width:420px;padding:32px 24px;text-align:center;background:var(--chalk);color:var(--deep);border-radius:16px;border-bottom:10px dotted var(--indigo)}
+.ticket h1{font:800 4rem/1 "Bricolage Grotesque",system-ui,sans-serif;margin:0}.ticket .win{display:block}
+@keyframes fill{to{width:100%}}@keyframes in{from{opacity:0;transform:translateX(-8px)}}@keyframes up{from{transform:translateY(32px)}}
+@media(prefers-reduced-motion:reduce){.log li,.sheet{animation:none}}
